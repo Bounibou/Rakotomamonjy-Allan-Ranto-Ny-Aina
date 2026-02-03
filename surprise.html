@@ -7,7 +7,9 @@
 
   <!-- Polices -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Geom:ital,wght@0,300..900;1,300..900&family=Playwrite+NZ+Basic:wght@100..400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -18,34 +20,43 @@
       margin: 0;
       min-height: 100vh;
       font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(135deg, #dbeeff, #f4faff);
-      color: #3a5f8f;
+      background: #F5E4E0; /* rose poudré clair */
+      color: #4A3B32; /* texte sombre pour contraste */
       display: flex;
       justify-content: center;
       padding: 40px 15px;
     }
 
     .container {
-      width: 100%;
-      max-width: 900px;
-      background: white;
-      border-radius: 30px;
-      padding: 40px 30px 50px;
-      box-shadow: 0 20px 40px rgba(100, 160, 220, 0.25);
-      animation: fadeIn 1s ease;
-    }
+  width: 100%;
+  max-width: 900px;
+  background:#ffffffd9;
+  border-radius: 30px;
+  padding: 40px 30px 50px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* plus doux */
+  animation: fadeIn 1s ease;
+}
 
     h1 {
-      font-family: 'Geom', cursive;
-      color: #4f9cff;
+      font-family: 'Playfair Display', cursive;
+      color: #A85C6B;
       text-align: center;
       font-size: 2.4rem;
       margin-bottom: 30px;
     }
 
+h2 {
+  font-family: 'Dancing script', cursive;
+  color: #B07C82;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
     /* SECTION POÈME */
     .poem {
-      background: #f0f7ff;
+      margin-top: 25px; /* ajoute un petit gap entre la musique et le poème */
+      background: rgba(255, 220, 220, 0.7); /* rose pastel transparent */
+      color: #6B4A4A; /* texte légèrement brun-rosé pour le contraste */
       border-radius: 22px;
       padding: 30px 25px;
       text-align: center;
@@ -91,11 +102,11 @@
       display: inline-block;
       padding: 12px 26px;
       border-radius: 999px;
-      background: linear-gradient(135deg, #7bbcff, #4f9cff);
+      background: linear-gradient(135deg, #F5B7B1, #E9969C); /* gradient rosé */
+      box-shadow: 0 10px 22px rgba(233, 150, 150, 0.35);
       color: white;
       text-decoration: none;
       font-weight: 600;
-      box-shadow: 0 10px 22px rgba(79, 156, 255, 0.35);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -122,14 +133,14 @@
  .music-section {
   margin-top: 25px;
   padding: 16px 24px;
-  background-color: #ffffffd9;
+  background-color: rgba(245, 228, 224, 0.8); /* blanc-rosé transparent */
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .music-text {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   margin-bottom: 10px;
   color: #4A3B32;
@@ -139,18 +150,17 @@
   border: none;
   padding: 10px 24px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #7bbcff, #4f9cff);
+  background: #E9969C; /* rose doux */
+  box-shadow: 0 10px 22px rgba(233, 150, 150, 0.35);
   color: white;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.music-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 14px rgba(79, 156, 255, 0.45);
+.music-btn:hover, .love-final button:hover {
+  box-shadow: 0 14px 30px rgba(233, 150, 150, 0.45);
 }
-
 .love-final {
   text-align: center;
   margin-top: 40px;
@@ -160,11 +170,10 @@
   padding: 14px 28px;
   border-radius: 999px;
   border: none;
-  background: linear-gradient(135deg, #7bbcff, #4f9cff);
+  background: #E9969C; /* rose doux */
   color: white;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 10px 22px rgba(79,156,255,0.35);
 }
 
 #finalMessage {
@@ -174,23 +183,55 @@
   color: #4f9cff;
 }
 
+.floating-hearts {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
 
-  </style>
+  .floating-hearts span {
+    position: absolute;
+    bottom: -20px; /* départ en bas */
+    font-size: 1.2rem;
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    opacity: 0.7;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0; }
+    10% { opacity: 0.8; }
+    100% { transform: translateY(-110vh); opacity: 0; }
+  }
+
+</style>
 </head>
 <body>
 
-<div class="music-box">
-  <p class="music-text">🎶 Une chanson que je te dédie 💖</p>
-
-  <button class="music-btn" onclick="toggleMusic()">
-    ▶️ Musique
-  </button>
-
-  <audio id="music" src="This Is Love.mp3"></audio>
-</div>
-
+<!-- Conteneur pour les cœurs -->
+<div class="floating-hearts" id="floatingHearts"></div>
   <div class="container">
-    <h1>RAKOTOMAMONJY Allan Ranto Ny Aina 💙</h1>
+    <h1>RAKOTOMAMONJY Allan Ranto Ny Aina ♡</h1>
+
+ <!-- 🎵 SECTION MUSIQUE -->
+  <section class="music-section">
+    <h2>Une chanson que je te dédie ✿</h2>
+
+    <p class="music-text">
+      This is Love - Fy Rasolofoniaina
+    </p>
+
+    <button class="music-btn" onclick="toggleMusic()">
+      ▶️ Put your 🎧 on
+    </button>
+
+    <audio id="music" src="This Is Love.mp3"></audio>
+  </section>
 
     <!-- ✍️ POÈME : remplace le texte ci-dessous -->
     <div class="poem">
@@ -226,8 +267,8 @@ JE T'AIME, Allan 💗
     </div>
 
 <div class="love-final">
-  <button onclick="showLove()">Clique si tu m’aimes 💙</button>
-  <p id="finalMessage">Moi aussi. Pour toujours 🤍</p>
+  <button onclick="showLove()">Clique si tu m’aimes 🤭</button>
+  <p id="finalMessage">Moi, je t'aime. Pour toujours 🤍</p>
 </div>
 
     <!-- 🔙 RETOUR -->
@@ -240,6 +281,7 @@ JE T'AIME, Allan 💗
   const music = document.getElementById("music");
   function toggleMusic() {
     if (music.paused) {
+      music.volume = 0.25;
       music.play();
     } else {
       music.pause();
@@ -253,6 +295,26 @@ JE T'AIME, Allan 💗
   }
 </script>
 
+<script>
+  const container = document.getElementById('floatingHearts');
+
+  function createHeart() {
+    const heart = document.createElement('span');
+    heart.innerHTML = '💖';
+    heart.style.left = Math.random() * 100 + 'vw';           // position horizontale aléatoire
+    heart.style.fontSize = 14 + Math.random() * 16 + 'px';   // taille aléatoire
+    heart.style.animationDuration = 4 + Math.random() * 4 + 's'; // vitesse aléatoire
+    container.appendChild(heart);
+
+    // Supprimer le cœur après son animation
+    setTimeout(() => {
+      heart.remove();
+    }, parseFloat(heart.style.animationDuration) * 1000);
+  }
+
+  // Générer un cœur toutes les 400ms automatiquement
+  setInterval(createHeart, 400);
+</script>
 
 </body>
 </html>
